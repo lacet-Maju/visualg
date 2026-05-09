@@ -1,0 +1,56 @@
+algoritmo "caixa_eletronico"
+
+var
+saldo, saque, deposito: real
+opcao: inteiro
+
+inicio
+
+saldo <- 1000
+
+repita
+
+   escreva("")
+   escreva("===== CAIXA ELETRONICO =====")
+   escreva("  1 Ver saldo")
+   escreva("  2 Depositar")
+   escreva("  3 Sacar")
+   escreva("  4 Sair")
+   escreva("Escolha uma opcao: ")
+   leia(opcao)
+
+   escolha opcao
+
+      caso 1
+         escreva("Saldo atual: R$", saldo)
+
+      caso 2
+         escreva("Valor do deposito: R$")
+         leia(deposito)
+
+         saldo <- saldo + deposito
+
+         escreva("Deposito realizado!")
+
+      caso 3
+         escreva("Valor do saque: R$")
+         leia(saque)
+
+         se saque <= saldo entao
+            saldo <- saldo - saque
+            escreva("Saque realizado!")
+         senao
+            escreva("Saldo insuficiente!")
+         fimse
+
+      caso 4
+         escreva("Encerrando sistema...")
+
+      outrocaso
+         escreva("Opcao invalida!")
+
+   fimescolha
+
+ate opcao = 4
+
+fimalgoritmo
