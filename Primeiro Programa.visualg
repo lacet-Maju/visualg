@@ -1,0 +1,58 @@
+algoritmo "calculadora_simples"
+
+var
+  n1, n2, resultado: real
+  opcao: caractere
+
+inicio
+
+  escreva("===== CALCULADORA =====")
+
+  escreva("Digite o primeiro numero: ")
+  leia(n1)
+
+  escreva("Digite o segundo numero: ")
+  leia(n2)
+
+  escreva("")
+  escreva("Escolha a operação:")
+  escreva("+  Soma")
+  escreva("-  Subtração")
+  escreva("*  Multiplicação")
+  escreva("/  Divisão")
+
+  escreva("Operação: ")
+  leia(opcao)
+
+  se opcao = "+" entao
+    resultado <- n1 + n2
+    escreva("Resultado: ", resultado)
+
+  senao
+    se opcao = "-" entao
+      resultado <- n1 - n2
+      escreva("Resultado: ", resultado)
+
+    senao
+      se opcao = "*" entao
+        resultado <- n1 * n2
+        escreva("Resultado: ", resultado)
+
+      senao
+        se opcao = "/" entao
+
+          se n2 <> 0 entao
+            resultado <- n1 / n2
+            escreva("Resultado: ", resultado)
+          senao
+            escreva("Erro: divisão por zero!")
+          fimse
+
+        senao
+          escreva("Operação inválida!")
+        fimse
+      fimse
+    fimse
+  fimse
+
+fimalgoritmo
